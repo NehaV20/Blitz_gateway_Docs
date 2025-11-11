@@ -7,7 +7,9 @@ The SDK supports authentication, fetching market data, subscribing to market fee
 ---
 
 ## Features
-- **Authentication**: Secure login  to obtain an **API key**. With the **API key** and **user ID** Login via [AppLogin](AppLogin) get an **Acess-Token**, we can authenticate and access the SDK.
+- **Authentication**: Secure login  to obtain an **API key**. With the **API key** and **user ID** Login via 
+[AppLogin](../MarketDataSrevr/AppLogin.md)
+ get an **Acess-Token**, we can authenticate and access the SDK.
 - **Market Data APIs**:
   - Get LTP (Last Traded Price) for given instruments.
   - Get Option Chain data.
@@ -39,7 +41,8 @@ pip install -r requirements.txt
 ## Setup & Configuration
 
 To start using the SDK,  need the following:
-- **API Key**: With  API key to acess *SDK* and  authenticat via [AppLogin](AppLogin).
+- **API Key**: With  API key to acess *SDK* and  authenticat via [AppLogin](../MarketDataSrevr/AppLogin.md)
+.
 - **User ID**:  unique user identifier.
 
 ### Environment Variables (for sensitive data)
@@ -169,8 +172,3 @@ The SDK includes error handling mechanisms:
 - **No Data Received**: Check if subscribing to the correct instrument IDs and verify the WebSocket connection is active.
 
 ---
-
-
-## License
-
-This SDK is open-source and licensed under the [MIT License](LICENSE).

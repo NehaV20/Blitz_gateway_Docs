@@ -5,11 +5,11 @@ const config = {
   tagline: 'Market Data Documentation',
   favicon: 'img/icon.png',
   staticDirectories: ['static'],
-  url: 'http://localhost:3000',
+  url: 'https://nehav20.github.io',
   baseUrl: '/',
 
-  organizationName: 'Quantxpress Technology Private Limited',
-  projectName: 'Market Data',
+  organizationName: 'Blitz_gateway_Docs',
+  projectName: 'MarketData',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
@@ -75,7 +75,7 @@ const config = {
           items: [
             {
               label: 'Guide',
-              to: '/DeveloperAPI/intro', // links directly to intro page
+              to: '/intro',
             },
           ],
         },

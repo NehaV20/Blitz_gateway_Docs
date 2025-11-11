@@ -16,7 +16,7 @@ The **Change Password API** allows an authenticated user to securely change thei
 |----------------|----------------------|----------|
 | Content-Type   | application/json      | Yes      |
 | Accept         | application/json      | Yes      |
-| Authorization  | Bearer {accessToken}  | Yes      |
+| Authorization  | `Bearer "<JWT_ACCESS_TOKEN>"`  | Yes      |
 
 ---
 
