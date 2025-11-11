@@ -115,24 +115,30 @@ To subscribe to real-time market data via WebSocket:
 
 ```python
 
-from marketdata_sdk import MarketDataClient
+# Define your instrument(s)
+Instruments = [1010010002000001]         #using numeric instrument ID
+# Instruments = "NSECM|RELIANCE"     # symbol format
 
-instrument_ids = [1010010002000001]
+def my_callback_function(data):
+    print("New tick data received:", data)
 
-# Initialize Market Data Client
-client = MarketDataClient(app_key="app_key", user_id= "userId")
+# Set callback
+client.on_message = my_callback_function
 
-# Connect to the WebSocket server
+# Connect WebSocket
 client.connect_ws()
+print("WebSocket connection established.")
 
+# Subscribe
+client.subscribe_market_data(Instruments)
 
-# Run the client until interrupted
-try:
-    while True:
-        time.sleep(1)
-except KeyboardInterrupt:
-    print("Stopping WebSocket...")
-    ws_client.stop()
+#Unsubscribe
+client.unsubscribe_market_data(instruments)
+
+# Keep the script alive to receive ticks
+while True:
+    time.sleep(1)
+
 ```
 
 ### WebSocket Methods:
@@ -150,9 +156,7 @@ The 8MarketDataWebSocketClien8thas automatic reconnection logic, which attempts 
 
 ### Callbacks:
 can define custom callbacks for handling WebSocket events:
-- **on_connect**: Callback when WebSocket connects.
-- **on_close**: Callbackkk when WebSocket closes.
-- **on_tick**: Callback for receiving market data ticks.
+
 - **on_message**: The `on_message` callback is used to handle real-time data received over WebSocket. The user can assign their own function to this callback, which will be triggered every time a new WebSocket message arrives.
 for more Info visit [callbackimplementation](callbackimplementation)
 ---
